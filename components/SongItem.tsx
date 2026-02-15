@@ -61,21 +61,22 @@ export default function SongItem({
     return(
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-                <h4>{index}</h4>
+                <h4 className="w-5 text-center">{index}</h4>
                 <button 
                     type="button"
                     title="play"
                     onClick={togglePlay}
+                    className="cursor-pointer duration-500 hover:scale-120"
                 >
                     {isPlaying ? <PiPauseLight size={35} /> : <IoPlayOutline size={35} />}
                 </button>
                 <div className="flex flex-col">
-                    <h5>{info?.common?.title || "Unknown Title"}</h5>
-                    <h5>{info?.common?.artist || "Unknown Artist"}</h5>
+                    <h5 className="font-semibold text-[15px]">{info?.common?.title || "Unknown Title"}</h5>
+                    <h5 className="text-[13px]">{info?.common?.artist || "Unknown Artist"}</h5>
                 </div>
             </div>
-            <div className="flex items-center gap-4">
-                <h5>
+            <div className="flex items-center gap-10">
+                <h5 className="text-end">
                     {info?.format?.duration
                         ? new Date(info.format.duration * 1000).toISOString().substring(14, 19)
                         : "--:--"
@@ -84,6 +85,7 @@ export default function SongItem({
                 <button 
                     type="button" 
                     title="share"
+                    className="cursor-pointer duration-500 hover:scale-120"
                 >
                     <IoShareSocialOutline size={25} />
                 </button>
