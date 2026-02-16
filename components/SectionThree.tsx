@@ -1,9 +1,10 @@
 'use client';
-//Components
-import { useState } from "react";
+
+import { useState, forwardRef } from "react";
 import SongItem from "./SongItem";
 
-export default function SectionThree() {
+const SectionThree = forwardRef<HTMLDivElement, unknown>(function SectionThree(props, ref) {
+
     const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -17,8 +18,8 @@ export default function SectionThree() {
         '/music/Vi__the_Piltover_Enforcer__Here_Comes_Vi___From_League_of_Legends__Season_2_.mp3'
     ];
 
-    return(
-        <div className="w-full">
+    return (
+        <div ref={ref} className="w-full">
             <h3 className="uppercase text-[45px] font-semibold">Track list</h3>
             <div className="flex flex-col gap-3">
                 {songs.map((song, i) => (
@@ -35,4 +36,6 @@ export default function SectionThree() {
             </div>
         </div>
     );
-}
+});
+
+export default SectionThree;

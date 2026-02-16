@@ -5,7 +5,11 @@ import { RxAvatar } from "react-icons/rx";
 import { CiPlay1 } from "react-icons/ci";
 import { IoShareSocialOutline } from "react-icons/io5";
 
-export default function SectionOne() {
+interface SectionOneProps {
+    onListenClick: () => void;
+}
+
+export default function SectionOne({ onListenClick }: SectionOneProps) {
     return(
         <div className="flex justify-start w-full gap-15">
             <div className="flex items-end">
@@ -42,6 +46,7 @@ export default function SectionOne() {
                 <div className="flex gap-3">
                     <button
                         type="button"
+                        onClick={onListenClick}
                         className="cursor-pointer uppercase gap-2 bg-[#1d6cb1] text-white border border-[#1d6cb1] flex items-center text-[20px] py-2 px-4 duration-500
                                     hover:bg-transparent hover:border-[#1d6cb1]"
                     >
