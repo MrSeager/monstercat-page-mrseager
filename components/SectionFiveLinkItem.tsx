@@ -23,7 +23,7 @@ export default function SectionFiveLinkItem({ img, title1, title2 }: SectionFive
                 className="mb-3"
             />
             <h4 className="font-semibold text-[20px] -my-1 text-base/6">{title1}</h4>
-            <h4 className="-my-1 text-[15px] text-gray-300 text-base/6">{title2}</h4>
+            <h4 className="-my-1 text-[15px] text-[#787877] text-base/6 italic ">{title2}</h4>
         </Link>
     );
 }

@@ -10,7 +10,7 @@ import { SiApplemusic } from "react-icons/si";
 export default function HeaderNavbar() {
     return(
         <header className="z-20 w-full max-w-[120rem] fixed top-0 m-auto">
-            <nav className="relative px-10 py-5 flex items-center justify-between">
+            <nav className="relative px-10 pt-5 flex items-center justify-between">
                 <button 
                     type="button"
                     title="icon"
@@ -29,32 +29,32 @@ export default function HeaderNavbar() {
                 </button>
                 <div className="absolute top-30 right-10 flex flex-col gap-5">
                     <NavLink 
-                    href="/#"
-                    icon={<FaInstagram size={25} />}
+                        href="/#"
+                        icon={<FaInstagram size={25} />}
                     />
                     <NavLink 
-                    href="/#"
-                    icon={<FaTiktok size={25} />}
+                        href="/#"
+                        icon={<FaTiktok size={25} />}
                     />
                     <NavLink 
-                    href="/#"
-                    icon={<FaXTwitter size={25} />}
+                        href="/#"
+                        icon={<FaXTwitter size={25} />}
                     />
                     <NavLink 
-                    href="/#"
-                    icon={<FaTwitch size={25} />}
+                        href="/#"
+                        icon={<FaTwitch size={25} />}
                     />
                     <NavLink 
-                    href="/#"
-                    icon={<FaFacebook size={25} />}
+                        href="/#"
+                        icon={<FaFacebook size={25} />}
                     />
                     <NavLink 
-                    href="/#"
-                    icon={<FaDiscord size={25} />}
+                        href="/#"
+                        icon={<FaDiscord size={25} />}
                     />
                     <NavLink 
-                    href="/#"
-                    icon={<SiApplemusic size={25} />}
+                        href="/#"
+                        icon={<SiApplemusic size={25} />}
                     />
                 </div>
             </nav>
