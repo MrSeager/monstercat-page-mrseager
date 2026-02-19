@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import NavLink from "@/components/NavLink";
+import NavbarDropBtn from "./NavbarDropBtn";
 //Icons
 import { PiMusicNotesFill } from "react-icons/pi";
 import { IoMdMenu } from "react-icons/io";
@@ -10,18 +11,9 @@ import { FaInstagram, FaTiktok, FaTwitch, FaFacebook, FaDiscord } from "react-ic
 import { FaXTwitter } from "react-icons/fa6";
 import { SiApplemusic } from "react-icons/si";
 import { IoCloseSharp } from "react-icons/io5";
-import { IoIosArrowForward } from "react-icons/io";
-
-type MenuKey = 'music' | 'about' | 'events' | 'programming' | null;
 
 export default function HeaderNavbar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-
-    const [openSubMenu, setOpenSubMenu] = useState<MenuKey>(null);
-
-    const toggleMenu = (key: Exclude<MenuKey, null>) => {
-        setOpenSubMenu(prev => (prev === key ? null : key));
-    };
 
     return(
         <header className="z-20 w-full max-w-[120rem] fixed top-0 m-auto">
@@ -84,7 +76,7 @@ export default function HeaderNavbar() {
                 <nav 
                     onClick={(e) => e.stopPropagation()}
                     className={`
-                        absolute right-0 top-0 h-full w-[25rem] bg-black py-5 transform transition-transform duration-500
+                        absolute right-0 top-0 h-full w-full md:w-[25rem] bg-black py-5 transform transition-transform duration-500
                         flex flex-col justify-between items-start px-10  gap-5
                         ${isOpen ? 'translate-x-0' : 'translate-x-full'} 
                     `}
@@ -108,51 +100,98 @@ export default function HeaderNavbar() {
                             <IoCloseSharp size={40} />
                         </button>
                     </div>
-                    <div className="h-full w-full">
-                        <button
-                            type="button"
-                            onClick={() => toggleMenu('music')}
-                            className="cursor-pointer uppercase text-[20px] font-semibold flex gap-3 items-center duration-500
-                                        hover:scale-105"
-                        >
-                            Music <span className={`duration-500 ${openSubMenu === 'music' ? '' : '-rotate-90'}`}><IoIosArrowForward /></span>
-                        </button>
-                        <div className={`ps-3 flex flex-col overflow-hidden duration-500 ${openSubMenu === 'music' ? 'max-h-96' : 'max-h-0'}`}>
-                            <Link
-                                href='/'
-                                className="uppercase font-semibold text-[#787877] text-[17px] duration-500
-                                            hover:text-white"
-                            >
-                                Our music
-                            </Link>
-                            <Link
-                                href='/'
-                                className="uppercase font-semibold text-[#787877] text-[17px] duration-500
-                                            hover:text-white"
-                            >
-                                Instinct
-                            </Link>
-                            <Link
-                                href='/'
-                                className="uppercase font-semibold text-[#787877] text-[17px] duration-500
-                                            hover:text-white"
-                            >
-                                Uncaged
-                            </Link>
-                            <Link
-                                href='/'
-                                className="uppercase underline decoration-transparent font-semibold text-[#787877] text-[17px] duration-500
-                                            hover:text-white"
-                            >
-                                Silk
-                            </Link>
-                        </div>
+                    <div className="flex flex-col h-full w-full overflow-x-hidden overflow-y-auto">
+                        <NavbarDropBtn 
+                            label="Music"
+                            items={[
+                                { label: "Our music", href: "/" }, 
+                                { label: "Instinct", href: "/" }, 
+                                { label: "Uncaged", href: "/" }, 
+                                { label: "Silk", href: "/" },
+                            ]}
+                        />
                         <Link
                             href='/'
                             className="inline-block uppercase font-semibold text-white text-[20px] duration-500
-                                        hover:scale-105"
+                                        hover:translate-x-1"
                         >
                             Artists
+                        </Link>
+                        <NavbarDropBtn 
+                            label="About"
+                            items={[
+                                { label: "About Monstercat", href: "/" }, 
+                                { label: "Diversity & Inclusion", href: "/" }, 
+                                { label: "Code of Ethics", href: "/" }, 
+                                { label: "Environmental", href: "/" }, 
+                                { label: "Contact Us", href: "/" }, 
+                                { label: "Careers", href: "/" },
+                            ]}
+                        />
+                        <Link
+                            href='/'
+                            className="inline-block uppercase font-semibold text-white text-[20px] duration-500
+                                        hover:translate-x-1"
+                        >
+                            News
+                        </Link>
+                        <NavbarDropBtn 
+                            label="Events"
+                            items={[
+                                { label: "Monstercat Events Experience", href: "/" }, 
+                                { label: "Upcoming Events", href: "/" },
+                            ]}
+                        />
+                        <NavbarDropBtn 
+                            label="Programming"
+                            items={[
+                                { label: "MonstercatTV", href: "/" }, 
+                                { label: "Call of the Wild", href: "/" },
+                                { label: "Silk Showcase", href: "/" }, 
+                                { label: "Upcoming Shows", href: "/" }, 
+                            ]}
+                        />
+                        <Link
+                            href='/'
+                            className="inline-block uppercase font-semibold text-white text-[20px] duration-500
+                                        hover:translate-x-1"
+                        >
+                            Gold
+                        </Link>
+                        <Link
+                            href='/'
+                            className="inline-block uppercase font-semibold text-white text-[20px] duration-500
+                                        hover:translate-x-1"
+                        >
+                            Partners
+                        </Link>
+                        <Link
+                            href='/'
+                            className="inline-block uppercase font-semibold text-white text-[20px] duration-500
+                                        hover:translate-x-1"
+                        >
+                            Press
+                        </Link>
+                        <Link
+                            href='/'
+                            className="inline-block uppercase font-semibold text-white text-[20px] duration-500
+                                        hover:translate-x-1"
+                        >
+                            Player
+                        </Link>
+                        <Link
+                            href='/'
+                            className="inline-block uppercase font-semibold text-white text-[20px] duration-500
+                                        hover:translate-x-1"
+                        >
+                            Shop
+                        </Link>
+                        <Link
+                            href='/'
+                            className="inline-block uppercase font-semibold text-white text-[20px] duration-500
+                                        hover:translate-x-1"
+                        >
+                            Lost Civilization
                         </Link>
                     </div>
                     <div className="flex gap-3">
