@@ -61,7 +61,7 @@ export default function SongItem({
     return(
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-                <h4 className="w-5 text-center">{index}</h4>
+                <h4 className="w-1 lg:w-5 text-center">{index}</h4>
                 <button 
                     type="button"
                     title="play"
@@ -75,7 +75,7 @@ export default function SongItem({
                     <h5 className="text-[13px]">{info?.common?.artist || "Unknown Artist"}</h5>
                 </div>
             </div>
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-3 lg:gap-10">
                 <h5 className="text-end">
                     {info?.format?.duration
                         ? new Date(info.format.duration * 1000).toISOString().substring(14, 19)

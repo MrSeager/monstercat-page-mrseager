@@ -37,8 +37,8 @@ export default function SectionFive() {
 
     return(
         <div className="w-full flex flex-col">
-            <h3 className="uppercase text-[55px] font-semibold">Other releases</h3>
-            <div className="w-full grid grid-cols-6 gap-3">
+            <h3 className="uppercase text-[30px] md:text-[50px] font-semibold">Other releases</h3>
+            <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
                 {releases.map((item) => (
                     <SectionFiveLinkItem 
                         key={item.img} 

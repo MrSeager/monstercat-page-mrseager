@@ -20,7 +20,7 @@ const SectionThree = forwardRef<HTMLDivElement, unknown>(function SectionThree(p
 
     return (
         <div ref={ref} className="w-full">
-            <h3 className="uppercase text-[45px] font-semibold">Track list</h3>
+            <h3 className="uppercase text-[30px] md:text-[50px] font-semibold">Track list</h3>
             <div className="flex flex-col gap-3">
                 {songs.map((song, i) => (
                     <SongItem 

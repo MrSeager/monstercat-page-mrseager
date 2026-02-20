@@ -3,7 +3,7 @@
 export default function SectionFour() {
     return(
         <div className="w-full flex flex-col gap-3 aspect-video">
-            <h3 className="uppercase text-[55px] font-semibold">Music video</h3>
+            <h3 className="uppercase text-[30px] md:text-[50px] font-semibold">Music video</h3>
             <iframe 
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/D9G1VOjN_84"

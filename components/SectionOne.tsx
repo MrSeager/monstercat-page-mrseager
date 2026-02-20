@@ -11,8 +11,8 @@ interface SectionOneProps {
 
 export default function SectionOne({ onListenClick }: SectionOneProps) {
     return(
-        <div className="flex justify-start w-full gap-15">
-            <div className="flex items-end">
+        <div className="flex flex-col lg:flex-row justify-start w-full gap-15">
+            <div className="flex justify-center items-end px-5 md:px-0">
                 <p className="text-[#1d6cb1] italic -rotate-90 origin-bottom-left leading-none -mr-20 whitespace-nowrap">
                     Arcane OST
                 </p>
@@ -25,8 +25,8 @@ export default function SectionOne({ onListenClick }: SectionOneProps) {
                 />
             </div>
             <div className="flex flex-col justify-center gap-3">
-                <h1 className="font-bold text-[90px] -my-4 text-transparent [-webkit-text-stroke:2px_white]">Arcane OST</h1>
-                <h2 className="font-semibold text-[50px] uppercase -my-4">League of Legend</h2>
+                <h1 className="font-bold text-[50px] md:text-[70px] -my-4 text-transparent [-webkit-text-stroke:2px_white]">Arcane OST</h1>
+                <h2 className="font-semibold text-[35px] md:text-[50px] uppercase -my-4">League of Legend</h2>
                 <div className="flex gap-3">
                     <button 
                         type="button" 

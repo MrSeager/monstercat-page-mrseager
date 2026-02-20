@@ -5,8 +5,8 @@ import { FaBandcamp, FaSoundcloud, FaApple, FaYoutube, FaSpotify } from "react-i
 export default function SectionTwo() {
     return(
         <div className="flex flex-col gap-3 py-5 w-full">
-            <h2 className="uppercase font-semibold text-[50px]">Stream it your way</h2>
-            <div className="grid grid-cols-7 w-[40%]">
+            <h2 className="uppercase font-semibold text-[30px] md:text-[50px]">Stream it your way</h2>
+            <div className="grid grid-cols-7 lg:w-[40%]">
                 <button
                     type="button"
                     title="Player"

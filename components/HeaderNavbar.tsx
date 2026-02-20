@@ -16,8 +16,8 @@ export default function HeaderNavbar() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return(
-        <header className="z-20 w-full max-w-[120rem] fixed top-0 m-auto">
-            <nav className="relative px-10 pt-5 flex items-center justify-between">
+        <header className="z-20 w-full max-w-[120rem] px-3 md:px-10 py-3 fixed top-0 m-auto bg-black/75 lg:bg-transparent">
+            <nav className="relative flex items-center justify-between">
                 <button 
                     type="button"
                     title="icon"
@@ -35,7 +35,9 @@ export default function HeaderNavbar() {
                 >
                     <IoMdMenu size={30} />
                 </button>
-                <div className="absolute top-30 right-10 flex flex-col gap-5">
+                <div className="hidden absolute gap-5
+                                md:flex md:flex-row md:top-5 md:left-1/2 md:-translate-x-1/2
+                                lg:flex-col lg:top-20 lg:right-0 lg:left-auto lg:translate-x-0">
                     <NavLink 
                         href="/#"
                         icon={<FaInstagram size={25} />}
